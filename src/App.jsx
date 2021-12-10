@@ -5,6 +5,8 @@ import Feature from './components/Feature'
 import Service from "./components/Service";
 import Price from './components/Price'
 import PriceCard from "./components/PriceCard";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 const Container =styled.div`
 height: 100vh;
@@ -42,6 +44,10 @@ const App = () => {
        </Container>
        <Container>
          <Price />
+       </Container>
+       <Container>
+         <Contact />
+         <Footer />
        </Container>
 
        </>

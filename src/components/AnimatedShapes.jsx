@@ -22,6 +22,7 @@ width: 100px;
 height: 100px;
 border-radius: 50%;
 background-color: #ff4eca;
+opacity: 0.7;
 position: absolute;
 top: 200px;
 left: -100px;
@@ -41,7 +42,7 @@ opacity: 0.5;
 position: absolute;
 top: 400px;
 left: -50px;
-animation: rectangle 10s linear alternate infinite;
+animation: rectangle 6s linear alternate infinite;
 @keyframes rectangle{
     to{
         transform: translate(50vw, -50vh);

@@ -4,18 +4,23 @@ import How1 from '../img/how1.jpeg'
 import MiniCard from './MiniCard'
 import Play from '../img/play.png'
 import Coffee from '../img/coffee.mp4'
+import How from '../img/how.jpeg'
 
 
 const Container=styled.div`
-
 height: 100%;
-
 display: flex;
+@media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 
 const Left=styled.div`
 width: 50%;
 position: relative;
+@media only screen and (max-width: 480px) {
+    display: none;
+  }
 `
 const Image=styled.img`
 display: ${(props) => props.open && "none"};
@@ -31,16 +36,25 @@ bottom: 0;
 right: 0;
 position: absolute;
 margin: auto;
+@media only screen and (max-width: 480px) {
+    width: 100%;
+  }
 
 `
 
 const Right=styled.div`
 width: 50%;
+@media only screen and (max-width: 480px) {
+    width: 100%;
+  }
 `
 const Wrapper =styled.div`
 padding: 50px;
 display: flex;
 flex-direction: column;
+@media only screen and (max-width: 480px) {
+    padding: 20px;
+  }
 `
 
 const Title =styled.h1`
@@ -75,18 +89,48 @@ cursor: pointer;
 display: flex;
 align-items: center;
 justify-content: center;
+@media only screen and (max-width: 480px) {
+    width: 150px;
+    height: 150px;
+    margin-left: 90px;
+
+  }
 
 
 `
 
 const Icon=styled.img`
     width: 40px;
+    @media only screen and (max-width: 480px) {
+    font-size: 30px;
+  }
 
 `
+
+const Modal = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 100;
+  left: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  right: 5px;
+  top: 30%;
+`;
+
 
 const Service = () => {
 
     const [open, setOpen] = useState (false);
+    const smallScreen = window.screen.width <= 480 ? true : false;
     return (
         <Container>
             <Left><Image open={open}src={How1} />
@@ -100,7 +144,7 @@ const Service = () => {
                         where you can feel "Bubbly" 
                     </Desc>
                     <CardContainer>
-                       <MiniCard />
+                       <MiniCard  />
                        <MiniCard />
                        <MiniCard />
 
@@ -109,6 +153,18 @@ const Service = () => {
                     <Button onClick={() => setOpen(true)}> <Icon src={Play} /></Button>
                 </Wrapper>
 
+                {smallScreen && open && (
+        <Modal>
+          <Video
+            open={open}
+            autoPlay
+            loop
+            controls
+            src={Coffee}
+          />
+          <CloseButton onClick={() => setOpen(false)}>Close</CloseButton>
+        </Modal>
+      )}
             </Right>
 
 

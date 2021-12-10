@@ -4,6 +4,7 @@ import PriceCard from "./PriceCard";
 import How from '../img/how.jpeg';
 import Table from '../img/table.jpeg';
 import Food from '../img/food.jpg';
+import How1 from '../img/how1.jpeg';
 
 
 
@@ -29,14 +30,14 @@ const Image =styled.img`
     margin-top: 10px;
     object-fit: cover;
  
-`
+`;
 
 const Price = () => {
 
   return (
     <Container>
       <Image src={How} />
-      <Image src={Table} />
+      <Image src={How1} />
       <Image src={Food} />
     </Container>
   );

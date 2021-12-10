@@ -2,10 +2,13 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import Feature from './components/Feature'
+import Service from "./components/Service";
+import Price from './components/Price'
+import PriceCard from "./components/PriceCard";
 
 const Container =styled.div`
 height: 100vh;
-background: #f0e4e4;
+background: #e2d8d8;
 overflow: hidden;
 `
 
@@ -33,6 +36,12 @@ const App = () => {
        </Container>
        <Container>
          <Feature />
+       </Container>
+       <Container>
+         <Service />
+       </Container>
+       <Container>
+         <Price />
        </Container>
 
        </>
